@@ -1,0 +1,6 @@
+jira_url="https://MY-SUBDOMAIN.atlassian.net/"
+temp_file="/tmp/jira-table.html"
+query="project = SD AND status = \"Waiting Service Desk\" order by created DESC"
+user="my.username@my-domain.tdl"
+token="myjiraAPItoken"
+
