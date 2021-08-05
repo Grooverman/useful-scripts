@@ -1,6 +1,14 @@
+# your jira server url
 jira_url="https://MY-SUBDOMAIN.atlassian.net/"
-temp_file="/tmp/jira-table.html"
-query="project = SD AND status = \"Waiting Service Desk\" order by created DESC"
-user="my.username@my-domain.tdl"
-token="myjiraAPItoken"
 
+# where the temporary html file will be stored
+temp_file="/tmp/jira-table.html"
+
+# your query (notice the escaped double quotes)
+query="project = SD AND status = \"Waiting Service Desk\" order by created DESC"
+
+# your username (generally your email, for Jira Cloud)
+user="my.username@my-domain.tdl"
+
+# your Jira API token
+token="myjiraAPItoken"
