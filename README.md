@@ -1,2 +1,4 @@
 # useful-scripts
-Toys.
+
+This repo is for productivity toys and stuff.
+
