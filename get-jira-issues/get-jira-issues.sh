@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source $SCRIPT_DIR/config
-
-echo '''
+html_code='''
 <html>
   <head>
     <style>
@@ -60,7 +57,10 @@ th, td {
     </style>
   </head>
   <body>
-''' >$temp_file
+''' 
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source $SCRIPT_DIR/config
 
 jira_url=$(echo ${jira_url%/})
 
@@ -75,11 +75,12 @@ curl -s "$jira_url/rest/issueNav/1/issueTable" \
   -H "Origin: $jira_url" \
   --data-raw "startIndex=0&jql=$query&layoutKey=list-view" \
   | jq -r '.issueTable.table' | sed -e 's/\\n//g' | sed "s|href=\"|href=\"$jira_url|g" \
-  >> $temp_file 
+  > $temp_file
 
 if [[ $(cat $temp_file) == "null" ]]; then
   echo Nothing new here.
 else
+  echo $(echo "$html_code" | cat - $temp_file) > $temp_file;
   sensible-browser "$temp_file";
 fi
 
