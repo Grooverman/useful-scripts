@@ -35,7 +35,6 @@ a:link {
 }
 
 
-
 table {
         border-collapse:collapse;
 }
