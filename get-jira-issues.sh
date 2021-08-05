@@ -59,7 +59,6 @@ th, td {
         border-right:none;
 }
 
-
     </style>
   </head>
   <body>
