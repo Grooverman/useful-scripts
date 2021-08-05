@@ -76,7 +76,8 @@ curl -s "$jira_url/rest/issueNav/1/issueTable" \
   -H 'X-Requested-With: XMLHttpRequest' \
   -H "X-Atlassian-Token: no-check" \
   -H "Origin: $jira_url" \
-  --data-raw "startIndex=0&jql=$query&layoutKey=list-view" | jq -r '.issueTable.table' | sed -e 's/\\n//g' | sed "s|href=\"|href=\"$jira_url|g" \
+  --data-raw "startIndex=0&jql=$query&layoutKey=list-view" \
+  | jq -r '.issueTable.table' | sed -e 's/\\n//g' | sed "s|href=\"|href=\"$jira_url|g" \
   >> $temp_file 
 
 if [[ $(cat $temp_file) == "null" ]]; then
