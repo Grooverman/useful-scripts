@@ -34,7 +34,6 @@ a:link {
   color: #cccccc;
 }
 
-
 table {
         border-collapse:collapse;
 }
