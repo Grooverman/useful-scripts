@@ -1,4 +1,4 @@
-### Script to monitor a specific list of tickets on Jira
+### Script to monitor relevant tickets on Jira
 
 Whenever you run this script it will:
 1. execute the query specified in the "config" file in the same directory, 
