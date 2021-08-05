@@ -23,4 +23,8 @@ How to get it:
 
 https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
 
-Once you got your API token, make sure to edit the "config" file.
+Once you got your API token, make sure to copy the "config.example" file to a new "config" file, and edit it.
+```bash
+cp config.example config
+vim config
+```
