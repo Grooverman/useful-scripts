@@ -10,7 +10,7 @@ It does nothing, however, if your query returns empty.
 If what you want is to be regularly reminded of issues that you're responsible for, 
 then you can add this script to your crontab so it's run every 15 minutes, for example:
 ```bash
-*/15 * * * * /path/to/this/repo/get-jira-issues/get-jira-issues.sh
+*/15 * * * * export DISPLAY=:0 && /path/to/this/repo/get-jira-issues/get-jira-issues.sh
 ```
 
 #### Jira API token
