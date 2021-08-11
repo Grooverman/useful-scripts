@@ -1,30 +1,37 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source $SCRIPT_DIR/config
+jira_url=$(echo ${jira_url%/})
+temp_file=$temp_dir/jira-wiki.html
+
 # handle arguments
 if [ $# -lt 1 ]; then
   echo "No arguments given." >&2
   # TODO: add usage
   exit
 fi
+open=true
 while true; do
   case "$1" in
+    -d)
+      open=false
+      echo "Downloading to file: $temp_file"
+      shift
+      ;;
     -o)
       open=true
-      shift ;;
+      shift
+      ;;
     -*)
       echo "Unknown option: $1" >&2
-      exit 2 ;;
+      exit 2
+      ;;
     *)
-      break ;;
+      break
+      ;;
   esac
 done
-
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source $SCRIPT_DIR/config
-
-jira_url=$(echo ${jira_url%/})
-
-temp_file=$temp_dir/jira-wiki.html
 
 curl -s "$1" \
   --compressed \
