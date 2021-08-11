@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 
-# TODO: add option to open page after retrieval.
+# handle arguments
+
+if [ $# -lt 1 ]; then
+  echo "No arguments given." >&2
+  # TODO: add usage
+  exit
+fi
+while true; do
+  case "$1" in
+    -o)
+      open=true
+      shift ;;
+    -*)
+      echo "Unknown option: $1" >&2
+      exit 2 ;;
+    *)
+      break ;;
+  esac
+done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $SCRIPT_DIR/config
