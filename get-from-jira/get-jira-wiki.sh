@@ -45,4 +45,8 @@ curl -s "$1" \
   | sed -E 's/id="likes-and-labels-container"/id="likes-and-labels-container" hidden/' \
   > $temp_file
 
+if [[ $open == 'true' ]]; then
+  sensible-browser "$temp_file";
+fi
+
 exit
