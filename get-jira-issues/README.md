@@ -1,6 +1,6 @@
 ### Script to monitor relevant issues on Jira
 
-Whenever you run this script it will:
+Whenever you run the `get-jira-issues.sh` script it will:
 1. execute the query specified in the "config" file in the same directory, 
 2. generate an html document with a table showing the results of your query, and
 3. open it on your favorite browser.
