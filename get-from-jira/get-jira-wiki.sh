@@ -23,6 +23,10 @@ while [ $# -ne 0 ]; do
       open=true
       shift
       ;;
+    http*)
+      url=$1
+      shift
+      ;;
     -*)
       echo "Unknown option: $1" >&2
       exit 2
@@ -33,7 +37,7 @@ while [ $# -ne 0 ]; do
   esac
 done
 
-curl -s "$1" \
+curl -s "$url" \
   --compressed \
   --user $user:$token \
   -H "Referer: $jira_url" \
