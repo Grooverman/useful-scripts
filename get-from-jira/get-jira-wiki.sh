@@ -12,7 +12,7 @@ if [ $# -lt 1 ]; then
   exit
 fi
 open=true
-while true; do
+while [ $# -ne 0 ]; do
   case "$1" in
     -d)
       open=false
