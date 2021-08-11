@@ -13,8 +13,8 @@ then you can add this script to your crontab so it's run every 15 minutes, for e
 */15 * * * * export DISPLAY=:0 && /path/to/this/repo/get-jira-issues/get-jira-issues.sh
 ```
 
-#### Jira API token
-For this script to work you will need your Jira API token. 
+#### Configuration
+For these scripts to work you will need your Jira API token. 
 
 ![image](https://user-images.githubusercontent.com/87875608/128429786-920c135a-af0e-43e7-9b64-bfd8bdbecd3e.png)
 
