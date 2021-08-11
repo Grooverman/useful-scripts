@@ -32,7 +32,8 @@ while [ $# -ne 0 ]; do
       exit 2
       ;;
     *)
-      break
+      echo "No url?" >&2
+      exit 2
       ;;
   esac
 done
