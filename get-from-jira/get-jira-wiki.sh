@@ -32,7 +32,7 @@ while [ $# -ne 0 ]; do
       exit 2
       ;;
     *)
-      echo "No url?" >&2
+      echo "Unkown argument: $1" >&2
       exit 2
       ;;
   esac
