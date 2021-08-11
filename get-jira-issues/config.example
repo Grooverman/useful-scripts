@@ -1,8 +1,8 @@
 # your jira server url
 jira_url="https://MY-SUBDOMAIN.atlassian.net/"
 
-# where the temporary html file will be stored
-temp_file="/tmp/jira-table.html"
+# where the temporary files will be stored
+temp_dir="/tmp"
 
 # your query (notice the escaped double quotes)
 query="project = SD AND status = \"Waiting Service Desk\" order by created DESC"

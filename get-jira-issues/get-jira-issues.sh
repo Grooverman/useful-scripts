@@ -64,6 +64,8 @@ source $SCRIPT_DIR/config
 
 jira_url=$(echo ${jira_url%/})
 
+temp_file=$temp_dir/jira-search.html
+
 curl -s "$jira_url/rest/issueNav/1/issueTable" \
   --compressed \
   --user $user:$token \
