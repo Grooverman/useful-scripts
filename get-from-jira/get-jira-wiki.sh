@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # handle arguments
-
 if [ $# -lt 1 ]; then
   echo "No arguments given." >&2
   # TODO: add usage
