@@ -79,7 +79,7 @@ curl -s "$jira_url/rest/issueNav/1/issueTable" \
   | jq -r '.issueTable.table' | sed -e 's/\\n//g' | sed "s|href=\"|href=\"$jira_url|g" \
   > $temp_file
 
-if [[ $(cat $temp_file) == "null" ]]; then
+if [[ $(cat $temp_file) == "null" ]] || [[ $(cat $temp_file) == "" ]]; then
   echo Nothing new here.
 else
   echo $(echo "$html_code" | cat - $temp_file) > $temp_file;
