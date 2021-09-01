@@ -13,9 +13,9 @@ then you can add this script to your crontab so it's run every 15 minutes, for e
 */15 * * * * export DISPLAY=:0 && /path/to/this/repo/get-jira-issues/get-jira-issues.sh
 ```
 
-Crontab example to run every 5 minutes, every hour from 11 through 18, on week days:
+Another crontab example – run every 5 minutes, from 11:00 up to 17:59, but only on week days:
 ```bash
-*/5 11-18 * * 1-5 export DISPLAY=:0 && /path/to/this/repo/get-jira-issues/get-jira-issues.sh
+*/5 11-17 * * 1-5 export DISPLAY=:0 && /path/to/this/repo/get-jira-issues/get-jira-issues.sh
 ```
 
 ### Configuration
