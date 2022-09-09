@@ -41,7 +41,7 @@ for i in metric_alarms:
     print("\n", pformat(metric))
     result = cloudwatch.put_metric_alarm(**metric)
     print(pformat(result))
-    break
+
 print("\nProcessed:", count)
 exit()
 
