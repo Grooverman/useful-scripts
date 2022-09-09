@@ -62,6 +62,8 @@ th, td {
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $SCRIPT_DIR/config
 
+browser=firefox
+
 jira_url=$(echo ${jira_url%/})
 
 temp_file=$temp_dir/jira-search.html
@@ -83,7 +85,7 @@ if [[ $(cat $temp_file) == "null" ]] || [[ $(cat $temp_file) == "" ]]; then
   echo Nothing new here.
 else
   echo $(echo "$html_code" | cat - $temp_file) > $temp_file;
-  sensible-browser "$temp_file";
+  $browser "$temp_file";
 fi
 
 exit
