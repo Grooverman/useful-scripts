@@ -87,5 +87,4 @@ for i,v in enumerate(alerts):
     alerts[i]['integration'] = alerts[i]['integration']['name']
     alerts[i]['tags'] = str(alerts[i]['tags'])[1:-1]
 
-
 print(json.dumps(alerts))
