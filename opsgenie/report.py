@@ -3,6 +3,7 @@ import requests
 import json
 import sys
 
+
 fields_to_remove = [
         'responders',
         'teams',
